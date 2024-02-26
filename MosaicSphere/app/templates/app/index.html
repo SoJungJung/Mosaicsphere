@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Upload Your Image - Mosaicsphere</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    </head>
+    <body>
+        <h1>Upload Whatever You Want!</h1>
+        <div class="upload-container">
+            <h1>Upload Your Image <span class="easter-egg">You Rock!</span></h1>
+            <form action="" method="POST" enctype="multipart/form-data" class="upload-form">
+                {% csrf_token %}
+                <label for="image" class="custom-file-upload"> Choose file </label>
+                <input type="file" name="image" id="image" required />
+                <button type="submit" class="upload-button">Upload Image</button>
+            </form>
+            <a href="{% url 'main' %}" class="back-button">Back to Home</a>
+        </div>
+    </body>
+</html>

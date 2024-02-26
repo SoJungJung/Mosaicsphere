@@ -1,0 +1,78 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Arial', sans-serif, ;
+    text-align: center;
+    padding: 20px;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../css/Futura-Bold.woff');
+}
+@font-face {
+    font-family: 'MyCustomFont2';
+    src: url('../css/Formula1-Display-Regular.woff');
+}
+
+header {
+    background: url('/MosaicSphere/app/templates/app/src/Logo.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px #000;
+    font-family: 'MyCustomFont';
+}
+
+.gallery h2 {
+    font-size: 2em;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #666;
+    font-family: 'MyCustomFont2';
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    font-size: 1.2em;
+}
+
+footer p {
+    margin: 0;
+    color: #ddd;
+    font-family: 'MyCustomFont';
+    background-color: #000;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    }
+    
+    .footer p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><polygon fill="white" points="100,10 40,198 190,78 10,78 160,198"/></svg>') center/contain no-repeat;
+    opacity: 0;
+    animation: sparkle 1s infinite ease-in-out;
+    }
+    
+    @keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    }
+    
+/* Add specific styles for your images, links, or other elements here */

@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Collage</title>
+        <link rel="stylesheet" href="{% static 'css/view_collage.css' %}" />
+    </head>
+    <body>
+        <h1>Image<span class="easter-egg"> Collage</span></h1>
+        <img src="{{ collage_url }}" alt="Collage" />
+        <h3>The World We've Made</h3>
+    </body>
+</html>

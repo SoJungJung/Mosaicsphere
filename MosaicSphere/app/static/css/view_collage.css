@@ -1,0 +1,59 @@
+/* Resetting margins and paddings for a clean layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif; /* Modern, sans-serif font for readability */
+    background-color: #121212; /* Deep, dark background for contrast */
+    color: #E0E0E0; /* Light grey text for readability against the dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../css/Futura-Bold.woff');
+}
+@font-face {
+    font-family: 'MyCustomFont2';
+    src: url('../css/AvantGardeLT-Demi.woff');
+}
+@font-face {
+    font-family: 'MyCustomFont3';
+    src: url('../css/Formula1-Display-Italic.woff');
+}
+
+h1 {
+    color: #FF5722; /* Bold, attention-grabbing color */
+    margin: 20px 0; /* Spacing above and below the title */
+    font-size: 2.5rem; /* Larger font size for the title */
+    font-family: 'MyCustomFont';
+}
+
+img {
+    max-width: 90%; /* Ensures the image is responsive and fits within the viewport */
+    border-radius: 10px; /* Softens the edges of the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds depth with a shadow */
+    margin: 20px 0; /* Spacing above and below the image */
+}
+
+h3 {
+    color: #F44336; /* Red text to highlight the playful comment */
+    font-style: italic; /* Italicize for emphasis */
+    font-size: 1.2rem; /* Slightly larger font size for visibility */
+    font-family: 'MyCustomFont3';
+}
+.easter-egg {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+h1:hover .easter-egg {
+    visibility: visible;
+    opacity: 1;
+    color:#E0E0E0
+}

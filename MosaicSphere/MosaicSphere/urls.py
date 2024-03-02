@@ -16,15 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views
+from app import views  # Make sure this is correct according to your app's name
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index, name='index'),  # Ensure consistency with trailing slashes
-    path('', views.main, name='main'),  # Corrected for root URL
-    path('collage/', views.collage, name='collage'),  # Ensure consistency with trailing slashes
-    path('hall/', views.hall, name='hall'),  # Ensure consistency with trailing slashes
+    path('index/', views.index, name='index'),
+    path('', views.main, name='main'),
+    path('collage/', views.collage, name='collage'),
+    path('hall/', views.hall, name='hall'),  # Add this line
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

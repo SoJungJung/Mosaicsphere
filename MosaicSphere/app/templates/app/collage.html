@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +9,12 @@
     </head>
     <body>
         <h1>Image<span class="easter-egg"> Collage</span></h1>
+        <!-- Check if collage_url exists and display the image; otherwise, show a placeholder or message -->
+        {% if collage_url %}
         <img src="{{ collage_url }}" alt="Collage" />
+        {% else %}
+        <p>No collage available. Upload images to create one!</p>
+        {% endif %}
         <h3>The World We've Made</h3>
     </body>
 </html>

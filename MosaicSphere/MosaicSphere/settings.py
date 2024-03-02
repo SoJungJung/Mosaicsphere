@@ -134,3 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # 업로드된 파일에 접근하기 위한 URL을 지정합니다.
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

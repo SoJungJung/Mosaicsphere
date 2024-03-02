@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import UploadedImage  # Adjust the import path if necessary
+from .models import UploadedImage, Collage  # Ensure Collage is imported here
 
 class UploadedImageAdmin(admin.ModelAdmin):
-    list_display = ['image', 'upload_date']  # Optional: to display fields in the admin list view
+    list_display = ['image', 'upload_date']
 
 # Register your models here.
-admin.site.register(UploadedImage, UploadedImageAdmin)
-
-# Register your models here.
+admin.site.register(UploadedImage, UploadedImageAdmin)  # Use UploadedImageAdmin for UploadedImage
+admin.site.register(Collage)  # Now Collage should be recognized without issues

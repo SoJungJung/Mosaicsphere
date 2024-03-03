@@ -1,12 +1,13 @@
 /* Resetting margins and paddings for a clean layout */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     font-family: 'Arial', sans-serif; /* Modern, sans-serif font for readability */
     background-color: #121212; /* Deep, dark background for contrast */
-    color: #E0E0E0; /* Light grey text for readability against the dark background */
+    color: #e0e0e0; /* Light grey text for readability against the dark background */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +28,7 @@ body, html {
 }
 
 h1 {
-    color: #FF5722; /* Bold, attention-grabbing color */
+    color: #ff5722; /* Bold, attention-grabbing color */
     margin: 20px 0; /* Spacing above and below the title */
     font-size: 2.5rem; /* Larger font size for the title */
     font-family: 'MyCustomFont';
@@ -41,7 +42,7 @@ img {
 }
 
 h3 {
-    color: #F44336; /* Red text to highlight the playful comment */
+    color: #f44336; /* Red text to highlight the playful comment */
     font-style: italic; /* Italicize for emphasis */
     font-size: 1.2rem; /* Slightly larger font size for visibility */
     font-family: 'MyCustomFont3';
@@ -55,5 +56,25 @@ h3 {
 h1:hover .easter-egg {
     visibility: visible;
     opacity: 1;
-    color:#E0E0E0
+    color: #e0e0e0;
+}
+
+div.navigation-buttons {
+    margin: 20px 0; /* Adds spacing above and below the button container */
+    display: flex; /* Uses Flexbox for layout */
+    justify-content: center; /* Centers buttons horizontally */
+    gap: 10px; /* Adds space between buttons */
+}
+
+div.navigation-buttons a {
+    text-decoration: none; /* Removes underline from links */
+    color: #ffffff; /* Sets text color to white */
+    background-color: #d40000; /* Sets background color to a blue shade */
+    padding: 10px 20px; /* Adds padding inside the buttons */
+    border-radius: 5px; /* Rounds the corners of the buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+div.navigation-buttons a:hover {
+    background-color: #000000; /* Darker shade of blue on hover */
 }

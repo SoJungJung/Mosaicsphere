@@ -25,6 +25,7 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('', views.main, name='main'),
     path('collage/', views.collage, name='collage'),
-    path('hall/', views.hall, name='hall'),  # Add this line
+    path('hall/', views.hall, name='hall'),
+    path('upload_image/', views.upload_image, name='upload_image'),  # Add this line
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

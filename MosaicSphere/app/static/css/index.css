@@ -4,6 +4,7 @@ body {
     background-color: #282c34; /* Dark background for contrast */
     color: white; /* Light text for readability */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -26,28 +27,33 @@ h1 {
     font-family: 'MyCustomFont';
 }
 
+.upload-black {
+    color: black;
+}
+
 .upload-container {
     width: 100%;
     max-width: 600px; /* Responsive max-width */
     padding: 20px;
     margin: 50px auto; /* Centering */
     background-color: #fff; /* Light background for the container */
-    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Soft shadow for depth */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     border-radius: 8px; /* Rounded corners */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .upload-container:hover {
     transform: translateY(-5px); /* Slight raise effect on hover */
-    box-shadow: 0 0 20px rgba(0,0,0,0.25); /* Enhanced shadow on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
 }
 
 /* Form and Input Styling */
 .upload-form {
     margin-top: 20px;
+    color: #282c34;
 }
 
-input[type="file"] {
+input[type='file'] {
     display: inline-block;
     width: 90%;
     padding: 10px;
@@ -57,12 +63,13 @@ input[type="file"] {
     transition: border-color 0.3s ease; /* Smooth color transition */
 }
 
-input[type="file"]:hover {
+input[type='file']:hover {
     border-color: #aaa; /* Darker border on hover for visibility */
 }
 
 /* Button Styling */
-.upload-button, .back-button {
+.upload-button,
+.back-button {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
@@ -77,7 +84,8 @@ input[type="file"]:hover {
     font-family: 'MyCustomFont2';
 }
 
-.upload-button:hover, .back-button:hover {
+.upload-button:hover,
+.back-button:hover {
     background-color: #555; /* Darken button on hover */
 }
 

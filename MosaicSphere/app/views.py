@@ -32,17 +32,21 @@ def create_collage():
         return None  # No images to create a collage from
 
     images_list = [Image.open(image.image.path) for image in images]
-    num_images_side = 2  # Adjust based on how many images you want per side
-    image_width, image_height = images_list[0].size
 
+    # Assuming you want a grid layout
+    num_images_side = int(len(images_list) ** 0.5)  # For a square grid
+    if num_images_side ** 2 < len(images_list):  # Adjust for non-perfect squares
+        num_images_side += 1
+
+    image_width, image_height = images_list[0].size
     collage_width = image_width * num_images_side
     collage_height = image_height * num_images_side
 
     collage = Image.new('RGB', (collage_width, collage_height))
 
     for index, image in enumerate(images_list):
-        x = index % num_images_side * image_width
-        y = index // num_images_side * image_height
+        x = (index % num_images_side) * image_width
+        y = (index // num_images_side) * image_height
         collage.paste(image, (x, y))
 
     # Ensure the 'collages' directory exists in your MEDIA_ROOT
@@ -54,13 +58,9 @@ def create_collage():
     Collage.objects.create(collage_image=collage_path)
 
 def collage(request):
-    try:
-        latest_collage = Collage.objects.latest('creation_date')
-        collage_url = latest_collage.collage_image.url
-    except Collage.DoesNotExist:
-        collage_url = None
-    return render(request, 'app/collage.html', {'collage_url': collage_url})
+    collages=Collage.objects.all()
+    return render(request, 'app/collage.html', {'collages': collages})
 
 def hall(request):
-    collages = Collage.objects.order_by('-creation_date')
+    collages = Collage.objects.all()
     return render(request, 'app/hall.html', {'collages': collages})

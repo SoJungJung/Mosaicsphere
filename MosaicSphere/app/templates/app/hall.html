@@ -1,9 +1,10 @@
-{% load static %}<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <title>Hall of Images</title>
-        <link rel="stylesheet" href="{% static 'css/hall_of_fame.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/hall_of_fame.css' %}?v=1.1" />
     </head>
     <body>
         <header>
@@ -11,7 +12,10 @@
         </header>
         <section class="gallery">
             <h2>Image Collage of Yesterdays</h2>
-            <!-- Images go here -->
+            {% for collage in collages %}
+            <div>{{collage.creation_date}}</div>
+            <img src="{{ collage.collage_image.url }}" alt="Latest Collage" />
+            {% endfor %}
         </section>
         <footer>
             <p>Give me a hell yeah!</p>

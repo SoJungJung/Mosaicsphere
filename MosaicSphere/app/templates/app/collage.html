@@ -5,16 +5,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Collage</title>
-        <link rel="stylesheet" href="{% static 'css/view_collage.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/view_collage.css' %}?v=2.1" />
     </head>
     <body>
         <h1>Image<span class="easter-egg"> Collage</span></h1>
         <!-- Check if collage_url exists and display the image; otherwise, show a placeholder or message -->
-        {% if collage_url %}
-        <img src="{{ collage_url }}" alt="Collage" />
-        {% else %}
-        <p>No collage available. Upload images to create one!</p>
-        {% endif %}
+        {% for collage in collages %} {% if forloop.last %}
+        <img src="{{ collage.collage_image.url }}" alt="Latest Collage" />
+        {% endif %} {% endfor %}
         <h3>The World We've Made</h3>
         <div class="navigation-buttons">
             <a href="{% url 'index' %}" class="btn">Upload More Images</a>

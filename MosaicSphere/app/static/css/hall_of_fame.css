@@ -1,7 +1,7 @@
 body {
     background-color: #1a1a1a;
     color: #fff;
-    font-family: 'Arial', sans-serif, ;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 20px;
 }
@@ -50,22 +50,24 @@ footer p {
     display: inline-block;
     cursor: pointer;
     user-select: none;
-    }
-    
-    .footer p::after {
+}
+
+.footer p::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><polygon fill="white" points="100,10 40,198 190,78 10,78 160,198"/></svg>') center/contain no-repeat;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><polygon fill="white" points="100,10 40,198 190,78 10,78 160,198"/></svg>')
+        center/contain no-repeat;
     opacity: 0;
     animation: sparkle 1s infinite ease-in-out;
-    }
-    
-    @keyframes sparkle {
-    0%, 100% {
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
         opacity: 0;
         transform: scale(0.2);
     }
@@ -73,6 +75,12 @@ footer p {
         opacity: 1;
         transform: scale(1);
     }
-    }
-    
+}
+
+img {
+    max-width: 700px; /* Ensures the image is responsive and fits within the viewport */
+    border-radius: 10px; /* Softens the edges of the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds depth with a shadow */
+    margin: 20px 0; /* Spacing above and below the image */
+}
 /* Add specific styles for your images, links, or other elements here */

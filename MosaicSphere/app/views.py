@@ -6,6 +6,11 @@ import datetime
 import os
 from django.conf import settings
 from .forms import ImageUploadForm
+from django.utils import timezone
+from django.db.models import Max
+from django.db.models.functions import TruncDay
+
+
 
 def index(request):
     return render(request, 'app/index.html')
@@ -61,6 +66,37 @@ def collage(request):
     collages=Collage.objects.all()
     return render(request, 'app/collage.html', {'collages': collages})
 
+# def hall(request):
+#     collages = Collage.objects.all()
+#     return render(request, 'app/hall.html', {'collages': collages})
+# def hall(request):
+#     # Get today's date and time
+#     today = timezone.now()
+#     # Calculate yesterday's date by subtracting a day from today
+#     yesterday = today - datetime.timedelta(days=1)
+#     # Filter collages created yesterday
+#     yesterdays_collages = Collage.objects.filter(creation_date__year=yesterday.year, creation_date__month=yesterday.month, creation_date__day=yesterday.day)
+#     # Get the most recent collage from yesterday
+#     if yesterdays_collages.exists():
+#         latest_collage = yesterdays_collages.latest('creation_date')
+#         collages = [latest_collage]
+#     else:
+#         collages = []
+
+#     return render(request, 'app/hall.html', {'collages': collages})
 def hall(request):
-    collages = Collage.objects.all()
-    return render(request, 'app/hall.html', {'collages': collages})
+    # Get the maximum 'creation_date' for each day
+    dates = Collage.objects.annotate(
+        date=TruncDay('creation_date')
+    ).values('date').annotate(
+        latest_creation=Max('creation_date')
+    ).order_by('-date')
+
+    # Now, for each date, get the corresponding latest collage
+    latest_collages = []
+    for date in dates:
+        latest_collage = Collage.objects.filter(creation_date=date['latest_creation']).first()
+        if latest_collage:
+            latest_collages.append(latest_collage)
+
+    return render(request, 'app/hall.html', {'collages': latest_collages})

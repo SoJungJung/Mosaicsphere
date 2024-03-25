@@ -7,11 +7,11 @@ body {
 }
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('../css/Futura-Bold.woff');
+    src: url('../fonts/Futura-Bold.woff');
 }
 @font-face {
     font-family: 'MyCustomFont2';
-    src: url('../css/Formula1-Display-Regular.woff');
+    src: url('../fonts/Formula1-Display-Italic.woff');
 }
 
 header {

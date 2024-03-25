@@ -15,11 +15,11 @@ html {
 
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('Futura-Bold.woff');
+    src: url('../fonts/Futura-Bold.woff');
 }
 @font-face {
     font-family: 'MyCustomFont2';
-    src: url('AvantGardeLT-Demi.woff');
+    src: url('../fonts/AvantGardeLT-Demi.woff');
 }
 
 /* Reducing the font size globally, adjust as needed */
